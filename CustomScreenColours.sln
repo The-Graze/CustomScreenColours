@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomScreenColours", "CustomScreenColours\CustomScreenColours.csproj", "{240E614D-9D6A-435A-B919-8D9F7B640A57}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{240E614D-9D6A-435A-B919-8D9F7B640A57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{240E614D-9D6A-435A-B919-8D9F7B640A57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{240E614D-9D6A-435A-B919-8D9F7B640A57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{240E614D-9D6A-435A-B919-8D9F7B640A57}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E7C441D-F6C6-44DF-A122-E4562B2BEAE6}
+	EndGlobalSection
+EndGlobal
