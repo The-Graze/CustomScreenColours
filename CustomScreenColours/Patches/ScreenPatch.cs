@@ -37,7 +37,6 @@ namespace CustomScreenColours.Patches
             mat2.color = Plugin.Instance.badColour.Value;
             __instance.meshRenderer.material = mat;
             __instance.failureMaterial = mat2;
-            Plugin.Instance.StartCoroutine(Plugin.Instance.SetStuff(0.5f));
         }
     }
 }
