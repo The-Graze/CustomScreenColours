@@ -33,8 +33,12 @@ namespace CustomScreenColours
 
         void Start()
         {
+            Invoke("RealStart", 2);
+        }
+        void RealStart()
+        {
             fixjkmat = FindObjectOfType<WardrobeFunctionButton>().unpressedMaterial;
-            mat = new Material(Shader.Find("Gorilla/GorillaUnlit"));
+            mat = new Material(fixjkmat);
             mat.color = Plugin.Instance.goodColour.Value;
             GorillaComputer.instance.computerScreenRenderer.material = mat;
             GameObject motdboard = GameObject.Find("motdscreen");
@@ -48,8 +52,15 @@ namespace CustomScreenColours
             GameObject.Find("LocalObjects_Prefab").AddComponent<MA>();
             GameObject.Find("LocalObjects_Prefab").AddComponent<BE>();
             GameObject.Find("LocalObjects_Prefab").AddComponent<CAV>();
-
-            Destroy(this);
+            Material mat1 = new Material(fixjkmat);
+            Material mat2 = new Material(fixjkmat);
+            foreach (GorillaLevelScreen scrren in Resources.FindObjectsOfTypeAll<GorillaLevelScreen>())
+            {
+                scrren.goodMaterial = mat;
+                scrren.badMaterial = mat2;
+                scrren.goodMaterial.color = goodColour.Value;
+                scrren.badMaterial.color = badColour.Value;
+            }
         }
     }
     class SJ : MonoBehaviour
@@ -108,12 +119,9 @@ namespace CustomScreenColours
         {
             if (transform.GetChild(9).gameObject.activeSelf)
             {
-                GameObject mtnsboard = GameObject.Find("Mountain/Geometry/scoreboard (1)/board");
-                mtnsboard.GetComponent<Renderer>().enabled = true;
-                mtnsboard.transform.localPosition = new Vector3(mtnsboard.transform.localPosition.x, mtnsboard.transform.localPosition.y, mtnsboard.transform.localPosition.z + 0.001f);
+                GameObject mtnsboard = transform.GetChild(9).GetChild(2).GetChild(27).GetChild(0).GetChild(1).gameObject;
                 Material[] mats = mtnsboard.GetComponent<Renderer>().materials;
-                mats[1] = Plugin.Instance.mat;
-                mtnsboard.GetComponent<Renderer>().materials = mats;
+                mtnsboard.GetComponent<Renderer>().material = Plugin.Instance.mat;
                 Destroy(this);
             }
         }
@@ -124,10 +132,8 @@ namespace CustomScreenColours
         {
             if (transform.GetChild(6).gameObject.activeSelf)
             {
-                GameObject beboard = GameObject.Find("Beach/scoreboard (2)/board");
-                Material[] mats = beboard.GetComponent<Renderer>().materials;
-                mats[1] = Plugin.Instance.mat;
-                beboard.GetComponent<Renderer>().materials = mats;
+                GameObject beboard = transform.GetChild(6).GetChild(7).GetChild(0).GetChild(1).gameObject;
+                beboard.GetComponent<Renderer>().material = Plugin.Instance.mat;
                 Destroy(this);
             }
         }
@@ -138,12 +144,8 @@ namespace CustomScreenColours
         {
             if (transform.GetChild(10).gameObject.activeSelf)
             {
-                GameObject cavb = GameObject.Find("CaveGameplayObjects/scoreboard (3)/board");
-                cavb.GetComponent<Renderer>().enabled = true;
-                Material[] mats = cavb.GetComponent<Renderer>().materials;
-                mats[1] = Plugin.Instance.mat;
-                cavb.GetComponent<Renderer>().materials = mats;
-                cavb.transform.localPosition = new Vector3(cavb.transform.localPosition.x, cavb.transform.localPosition.y, cavb.transform.localPosition.z + 0.001f);
+                GameObject cavb = transform.GetChild(10).GetChild(10).GetChild(7).GetChild(0).GetChild(1).gameObject;
+                cavb.GetComponent<Renderer>().material = Plugin.Instance.mat;
                 Destroy(this);
             }
         }
