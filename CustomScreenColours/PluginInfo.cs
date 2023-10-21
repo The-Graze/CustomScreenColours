@@ -7,6 +7,6 @@
     {
         public const string GUID = "CustomScreenColours.GorillaTag.Graze";
         public const string Name = "Custom Screen Colours";
-        public const string Version = "1.1.0";
+        public const string Version = "2.1.0";
     }
 }
